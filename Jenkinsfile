@@ -36,7 +36,7 @@ pipeline {
 
         stage('One') {
             steps {
-                git branch: 'main',
+                // git branch: 'main',
                 // url: 'https://github.com/Brain2life/test-jenkins.git'
 
                 script {
@@ -46,7 +46,7 @@ pipeline {
                     // echo "Parameter COMMIT: "
                     // echo "${params.COMMIT}"
 
-                    // sh 'git checkout -f ' + "${params.COMMIT}"
+                    sh 'git checkout -f ' + "${params.COMMIT}"
                     sh 'ls -al'   
                 }
 
