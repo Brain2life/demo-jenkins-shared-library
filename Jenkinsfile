@@ -46,7 +46,7 @@ pipeline {
                     echo "Parameter COMMIT: "
                     echo "${params.COMMIT}"
 
-                    sh 'git checkout -f' + "${params.COMMIT}"
+                    sh 'git checkout -f ' + "${params.COMMIT}"
                     sh 'ls -al'   
                 }
 
