@@ -39,13 +39,13 @@ pipeline {
 
                 checkoutCommitHash()
 
-                script {
+                // script {
                     // echo "You selected the following commit: " 
                     // echo "${params.COMMITS}"
                     // helloWorld()
-                    sh 'ls -al'
+                    // sh 'ls -al'
                     // sh 'git show README.md'
-                }
+                // }
             }
         }
 
