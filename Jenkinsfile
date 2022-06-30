@@ -38,9 +38,10 @@ pipeline {
                 url: 'https://github.com/Brain2life/portfolio.git'
                 
                 script {
-                    echo "You selected the following commit: " 
-                    echo "${params.COMMITS}"
-                    helloWorld()
+                    // echo "You selected the following commit: " 
+                    // echo "${params.COMMITS}"
+                    // helloWorld()
+                    sh 'ls -al'
                 }
             }
         }
