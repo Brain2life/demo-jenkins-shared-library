@@ -46,25 +46,10 @@ pipeline {
                     echo "Parameter COMMIT: "
                     echo "${params.COMMIT}"
 
-                    sh 'git checkout -f ' + "${params.COMMIT}"
+                    sh 'git checkout -f' + "${params.COMMIT}"
                     sh 'ls -al'   
                 }
 
-        stage('Two') {
-            steps {
-                // git branch: 'main',
-                // url: 'https://github.com/Brain2life/test-jenkins.git'
-
-                script {
-                    echo "GIT_COMMIT"
-                    echo env.GIT_COMMIT
-
-                    echo "Parameter COMMIT: "
-                    echo "${params.COMMIT}"
-
-                    // sh 'git checkout -f ' + "${params.COMMIT}"
-                    sh 'ls -al'   
-                }
 
                 // checkoutCommitHash()
 
@@ -78,6 +63,31 @@ pipeline {
             }
         }
 
+        stage('Two') {
+            steps {
+
+                script {
+                    echo "GIT_COMMIT"
+                    echo env.GIT_COMMIT
+
+                    echo "Parameter COMMIT: "
+                    echo "${params.COMMIT}"
+
+                    sh 'ls -al'   
+                }
+
+
+                // checkoutCommitHash()
+
+                // script {
+                    // echo "You selected the following commit: " 
+                    // echo "${params.COMMITS}"
+                    // helloWorld()
+                    // sh 'ls -al'
+                    // sh 'git show README.md'
+                // }
+            }
+        }
         // stage('Init') {
         //     steps {
         //         checkoutCommitHash()
