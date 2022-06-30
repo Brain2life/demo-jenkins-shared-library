@@ -37,7 +37,7 @@ pipeline {
         stage('One') {
             steps {
                 git branch: 'main',
-                url: 'https://github.com/Brain2life/test-jenkins.git'
+                // url: 'https://github.com/Brain2life/test-jenkins.git'
 
                 script {
                     echo "GIT_COMMIT"
