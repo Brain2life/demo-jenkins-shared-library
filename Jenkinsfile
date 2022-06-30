@@ -70,7 +70,7 @@ pipeline {
                     echo "GIT_COMMIT"
                     echo env.GIT_COMMIT
 
-                    echo "Parameter COMMIT: "
+                    // echo "Parameter COMMIT: "
                     // echo "${params.COMMIT}"
 
                     sh 'ls -al'   
