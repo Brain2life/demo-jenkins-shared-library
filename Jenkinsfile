@@ -11,12 +11,27 @@ def getAllCommits() {
     }
 }
 
+def checkoutCommitHash() {
+    node {
+        sh 'GIT_COMMIT='${params.COMMIT}''
+        echo "GIT_COMMIT is: "
+        echo env.GIT_COMMIT
+    }
+}
+
 pipeline {
     agent any
     
     parameters { choice(name: 'COMMITS', choices: getAllCommits(), description: 'Please Select One Commit') }
     
     stages {
+
+        stage('Init') {
+            steps {
+                checkoutCommitHash()
+            }
+        }
+
         stage('Example') {
             steps {
                 git branch: 'main',
@@ -30,19 +45,19 @@ pipeline {
             }
         }
 
-        stage('Checkout commit') {
-            steps {
-                git branch: 'main',
-                url: 'https://github.com/Brain2life/portfolio.git'
+        // stage('Checkout commit') {
+        //     steps {
+        //         git branch: 'main',
+        //         url: 'https://github.com/Brain2life/portfolio.git'
 
-                script {
-                    echo 'Checkout specific commit:'
-                    echo "${params.COMMITS}"
-                    sh 'git checkout ' + "${params.COMMITS}"
-                    sh 'ls -al'
-                    sh 'git show ' + "${params.COMMITS}"
-                }
-            }
-        }
+        //         script {
+        //             echo 'Checkout specific commit:'
+        //             echo "${params.COMMITS}"
+        //             sh 'git checkout ' + "${params.COMMITS}"
+        //             sh 'ls -al'
+        //             sh 'git show ' + "${params.COMMITS}"
+        //         }
+        //     }
+        // }
     }
 }
