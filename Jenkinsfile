@@ -74,6 +74,7 @@ pipeline {
                     echo "${params.COMMIT}"
 
                     sh 'ls -al'   
+                    sh 'cat README.md'
                 }
 
 
