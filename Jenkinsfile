@@ -1,6 +1,8 @@
 #!/usr/bin/env groovy
 @Library("shared-library") _
 
+parameters { choice(name: 'COMMIT', choices: getAllCommits(), description: 'Please Select One Commit') }
+
 def getAllCommits() {
     node {
         def commits = sh (
@@ -22,7 +24,6 @@ def checkoutCommitHash() {
 pipeline {
     agent any
     
-    parameters { choice(name: 'COMMIT', choices: getAllCommits(), description: 'Please Select One Commit') }
     
     stages {
 
