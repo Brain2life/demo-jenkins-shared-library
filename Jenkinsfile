@@ -40,6 +40,7 @@ pipeline {
                     echo "${params.COMMITS}"
                     sh 'git checkout ' + "${params.COMMITS}"
                     sh 'ls -al'
+                    sh 'git show ' + "${params.COMMITS}"
                 }
             }
         }
