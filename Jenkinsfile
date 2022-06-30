@@ -71,7 +71,7 @@ pipeline {
                     echo env.GIT_COMMIT
 
                     echo "Parameter COMMIT: "
-                    echo "${params.COMMIT}"
+                    // echo "${params.COMMIT}"
 
                     sh 'ls -al'   
                     sh 'cat README.md'
