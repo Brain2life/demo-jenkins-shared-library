@@ -37,7 +37,8 @@ pipeline {
 
                 script {
                     echo 'Checkout specific commit:'
-                    sh 'git checkout ' + '${params.COMMITS}'
+                    echo "${params.COMMITS}"
+                    sh 'git checkout ' + "${params.COMMITS}"
                 }
             }
         }
