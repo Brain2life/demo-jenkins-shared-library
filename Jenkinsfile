@@ -27,11 +27,11 @@ pipeline {
     
     stages {
 
-        stage('Init') {
-            steps {
-                checkoutCommitHash()
-            }
-        }
+        // stage('Init') {
+        //     steps {
+        //         checkoutCommitHash()
+        //     }
+        // }
 
         stage('Checkout') {
             steps {
@@ -44,6 +44,16 @@ pipeline {
                     // helloWorld()
                     sh 'ls -al'
                     // sh 'git show README.md'
+                }
+            }
+        }
+
+        stage('Init') {
+            steps {
+                checkoutCommitHash()
+
+                script {
+                    sh 'ls -al'
                 }
             }
         }
