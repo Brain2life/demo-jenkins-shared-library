@@ -12,7 +12,7 @@ def getAllCommits() {
 }
 
 def checkoutCommitHash() {
-        sh 'git checkout -f 8ac39edd805c36136e8e32b5c414adac3d0f2ae9'
+        sh 'git checkout -f ${params.COMMIT}'
         sh 'ls -al'
         // sh 'env.GIT_COMMIT="8ac39edd805c36136e8e32b5c414adac3d0f2ae9"'
         // echo "GIT_COMMIT is: "
@@ -22,7 +22,7 @@ def checkoutCommitHash() {
 pipeline {
     agent any
     
-    parameters { choice(name: 'COMMITS', choices: getAllCommits(), description: 'Please Select One Commit') }
+    parameters { choice(name: 'COMMIT', choices: getAllCommits(), description: 'Please Select One Commit') }
     
     stages {
 
