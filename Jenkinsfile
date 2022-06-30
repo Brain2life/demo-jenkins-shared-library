@@ -34,7 +34,7 @@ pipeline {
         //     }
         // }
 
-        stage('Checkout') {
+        stage('One') {
             steps {
                 git branch: 'main',
                 url: 'https://github.com/Brain2life/test-jenkins.git'
@@ -50,6 +50,21 @@ pipeline {
                     sh 'ls -al'   
                 }
 
+        stage('Two') {
+            steps {
+                // git branch: 'main',
+                // url: 'https://github.com/Brain2life/test-jenkins.git'
+
+                script {
+                    echo "GIT_COMMIT"
+                    echo env.GIT_COMMIT
+
+                    echo "Parameter COMMIT: "
+                    echo "${params.COMMIT}"
+
+                    // sh 'git checkout -f ' + "${params.COMMIT}"
+                    sh 'ls -al'   
+                }
 
                 // checkoutCommitHash()
 
