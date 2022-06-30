@@ -32,10 +32,10 @@ pipeline {
             }
         }
 
-        stage('Example') {
+        stage('Checkout') {
             steps {
-                // git branch: 'main',
-                // url: 'https://github.com/Brain2life/portfolio.git'
+                git branch: 'main',
+                url: 'https://github.com/Brain2life/100-days-of-code-python.git'
                 
                 script {
                     // echo "You selected the following commit: " 
