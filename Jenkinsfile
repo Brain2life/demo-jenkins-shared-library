@@ -39,6 +39,7 @@ pipeline {
                     echo 'Checkout specific commit:'
                     echo "${params.COMMITS}"
                     sh 'git checkout ' + "${params.COMMITS}"
+                    sh 'ls -al'
                 }
             }
         }
