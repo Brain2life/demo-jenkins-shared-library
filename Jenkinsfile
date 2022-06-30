@@ -11,15 +11,15 @@ def getAllCommits() {
     }
 }
 
-def checkoutCommitHash() {
-        echo "Parameter COMMIT: "
-        echo ${params.COMMIT}
-        // sh 'git checkout -f '${params.COMMIT}''
-        sh 'ls -al'
-        // sh 'env.GIT_COMMIT="8ac39edd805c36136e8e32b5c414adac3d0f2ae9"'
-        // echo "GIT_COMMIT is: "
-        // echo env.GIT_COMMIT
-}
+// def checkoutCommitHash() {
+//         echo "Parameter COMMIT: "
+//         echo ${params.COMMIT}
+//         // sh 'git checkout -f '${params.COMMIT}''
+//         sh 'ls -al'
+//         // sh 'env.GIT_COMMIT="8ac39edd805c36136e8e32b5c414adac3d0f2ae9"'
+//         // echo "GIT_COMMIT is: "
+//         // echo env.GIT_COMMIT
+// }
 
 pipeline {
     agent any
@@ -43,7 +43,7 @@ pipeline {
                 echo env.GIT_COMMIT
 
                 echo "Parameter COMMIT: "
-                echo ${params.COMMIT}
+                // echo ${params.COMMIT}
 
                 sh 'git checkout -f '${params.COMMIT}''
                 sh 'ls -al'                
