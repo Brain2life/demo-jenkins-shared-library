@@ -37,7 +37,9 @@ pipeline {
             steps {
                 git branch: 'main',
                 url: 'https://github.com/Brain2life/test-jenkins.git'
-                
+
+                checkoutCommitHash()
+
                 script {
                     // echo "You selected the following commit: " 
                     // echo "${params.COMMITS}"
@@ -48,15 +50,15 @@ pipeline {
             }
         }
 
-        stage('Init') {
-            steps {
-                checkoutCommitHash()
+        // stage('Init') {
+        //     steps {
+        //         checkoutCommitHash()
 
-                script {
-                    sh 'ls -al'
-                }
-            }
-        }
+        //         script {
+        //             sh 'ls -al'
+        //         }
+        //     }
+        // }
 
         // stage('Checkout commit') {
         //     steps {
