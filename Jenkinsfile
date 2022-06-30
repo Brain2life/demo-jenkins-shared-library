@@ -35,14 +35,14 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                url: 'https://github.com/Brain2life/100-days-of-code-python.git'
+                url: 'https://github.com/Brain2life/test-jenkins.git'
                 
                 script {
                     // echo "You selected the following commit: " 
                     // echo "${params.COMMITS}"
                     // helloWorld()
                     sh 'ls -al'
-                    sh 'git show HEAD'
+                    // sh 'git show README.md'
                 }
             }
         }
