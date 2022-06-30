@@ -13,7 +13,7 @@ def getAllCommits() {
 
 def checkoutCommitHash() {
     node {
-        sh 'GIT_COMMIT='${params.COMMIT}''
+        sh 'GIT_COMMIT=ee7145ae6c0d2efe66405d5a490d1825b07ae9d4'
         echo "GIT_COMMIT is: "
         echo env.GIT_COMMIT
     }
