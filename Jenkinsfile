@@ -34,8 +34,8 @@ pipeline {
 
         stage('Example') {
             steps {
-                git branch: 'main',
-                url: 'https://github.com/Brain2life/portfolio.git'
+                // git branch: 'main',
+                // url: 'https://github.com/Brain2life/portfolio.git'
                 
                 script {
                     // echo "You selected the following commit: " 
