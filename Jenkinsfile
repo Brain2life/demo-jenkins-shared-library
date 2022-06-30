@@ -12,12 +12,11 @@ def getAllCommits() {
 }
 
 def checkoutCommitHash() {
-    node {
-        sh 'git checkout -f 8ac39edd805c36136e8e32b5c414adac3d0f2ae9'
+        sh 'ls -al'
+        // sh 'git checkout -f 8ac39edd805c36136e8e32b5c414adac3d0f2ae9'
         // sh 'env.GIT_COMMIT="8ac39edd805c36136e8e32b5c414adac3d0f2ae9"'
-        echo "GIT_COMMIT is: "
-        echo env.GIT_COMMIT
-    }
+        // echo "GIT_COMMIT is: "
+        // echo env.GIT_COMMIT
 }
 
 pipeline {
