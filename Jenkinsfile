@@ -32,9 +32,13 @@ pipeline {
 
         stage('Checkout commit') {
             steps {
-                checkout([$class: 'GitSCM', 
-                branches: [[name: '${params.COMMITS}' ]],
-                userRemoteConfigs: [[url: 'https://github.com/Brain2life/portfolio.git']]])
+                git branch: 'main',
+                url: 'https://github.com/Brain2life/portfolio.git'
+
+                script {
+                    echo 'Checkout specific commit:'
+                    sh 'git checkout ' + '${params.COMMITS}'
+                }
             }
         }
     }
