@@ -42,6 +42,7 @@ pipeline {
                     // echo "${params.COMMITS}"
                     // helloWorld()
                     sh 'ls -al'
+                    sh 'git show HEAD'
                 }
             }
         }
